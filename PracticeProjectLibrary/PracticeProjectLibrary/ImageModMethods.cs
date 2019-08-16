@@ -4,21 +4,20 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ImageProcessor;
-using ImageProcessor.Imaging.Formats;
+using static System.Net.Mime.MediaTypeNames;
 using System.Drawing;
 using System.Drawing.Imaging;
 
-namespace ASCII_CoversionApp
+
+namespace PracticeProjectLibrary
 {
-    class Program
+    class ImageModMethods
     {
-        static void Main(string[] args)
+        static void ConvertToASCII(string filePath)
         {
             //Initialize directory, image, and instance of program
-            string directory = Path.Combine(Directory.GetCurrentDirectory() + "/YourFileHere.jpg");
-            Program p = new Program();
-            Image img = Image.FromFile(directory);
+            string directory = Path.Combine(Directory.GetCurrentDirectory() + filePath);
+            System.Drawing.Image img = System.Drawing.Image.FromFile(directory);
 
             //Modify image size for legibility
             img = ResizeImage(img, (int)(img.Width * .2), (int)(img.Height * .2));
@@ -30,7 +29,7 @@ namespace ASCII_CoversionApp
             using (StreamWriter sw = File.AppendText(Path.Combine(Directory.GetCurrentDirectory() + "/asciiFile.txt")))
             {
                 //Set up and fill out matrix for pixel data
-                Color[][] imgMatrix = p.getImgColorMatrix(img);
+                Color[][] imgMatrix = getImgColorMatrix(img);
                 for (int i = 0; i < imgMatrix.Length; i++)
                 {
                     for (int j = 0; j < imgMatrix[i].Length; j++)
@@ -161,7 +160,7 @@ namespace ASCII_CoversionApp
         }
 
         //Method for resizing image
-        static Bitmap ResizeImage(Image image, int width, int height)
+        static Bitmap ResizeImage(System.Drawing.Image image, int width, int height)
         {
             var destRect = new Rectangle(0, 0, width, height);
             var destImage = new Bitmap(width, height);
@@ -187,7 +186,7 @@ namespace ASCII_CoversionApp
         }
 
         //Method for retrieving pixel data
-        public Color[][] getImgColorMatrix(Image img)
+        static Color[][] getImgColorMatrix(System.Drawing.Image img)
         {
             Bitmap bmp = new Bitmap(img);
             Color[][] matrix;

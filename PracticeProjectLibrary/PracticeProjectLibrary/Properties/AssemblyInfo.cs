@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("ASCII_CoversionApp")]
+[assembly: AssemblyTitle("PracticeProjectLibrary")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("ASCII_CoversionApp")]
+[assembly: AssemblyProduct("PracticeProjectLibrary")]
 [assembly: AssemblyCopyright("Copyright ©  2019")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("bedad990-2e78-4f34-b839-c36808bb8c67")]
+[assembly: Guid("69a6038e-64f7-4951-b2e3-f93c46a70450")]
 
 // Version information for an assembly consists of the following four values:
 //
